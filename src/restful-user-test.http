@@ -1,0 +1,43 @@
+### create
+POST http://localhost:7788/user/create HTTP/1.1
+Content-Type: application/json
+ 
+{
+  "name": "测试添加用户"
+}
+ 
+
+### delete
+POST http://localhost:7788/user/delete/0 HTTP/1.1
+Content-Type: application/json
+ 
+### edit
+POST http://localhost:7788/user/edit/202010 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "测试添加用户123",
+  "sex":"Male"
+}
+
+### list
+get http://localhost:7788/user HTTP/1.1
+Content-Type: application/json
+
+
+### check
+get http://localhost:7788/user/check/1 HTTP/1.1
+Content-Type: application/json
+
+### search
+post http://localhost:7788/user/search HTTP/1.1
+Content-Type: application/json
+
+# {
+#   "sex":"Male",
+#   "tel":"13500000000"
+# }
+{
+  "username": "123",
+  "password": "123"
+}

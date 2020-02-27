@@ -1,0 +1,39 @@
+### create
+POST http://localhost:7788/vote/create HTTP/1.1
+Content-Type: application/json
+ 
+{
+  "title": "《投最佳歌手》",
+  "content":"这个投票是为了投最佳歌手/1.小王/2.小张/3.小李"
+}
+ 
+
+### delete
+POST http://localhost:7788/vote/delete/202021 HTTP/1.1
+Content-Type: application/json
+ 
+### edit
+POST http://localhost:7788/vote/edit/2020246 HTTP/1.1
+Content-Type: application/json
+
+{
+  "title:": "《投最佳歌手1》",
+  "content":"这个投票是为了投最佳歌手/1.小王/2.小张/3.小李"
+}
+
+### list
+get http://localhost:7788/vote HTTP/1.1
+Content-Type: application/json
+
+
+### check
+get http://localhost:7788/vote/check/2020211 HTTP/1.1
+Content-Type: application/json
+
+### search
+get http://localhost:7788/vote/search HTTP/1.1
+Content-Type: application/json
+
+{
+  "ownerid":"2020138"
+}

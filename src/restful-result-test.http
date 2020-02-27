@@ -1,0 +1,39 @@
+### create
+POST http://localhost:7788/result/create HTTP/1.1
+Content-Type: application/json
+ 
+{
+  "title": "《投最佳歌手》",
+  "content:":"这个投票是为了投最佳歌手/1.小王/2.小张/3.小李"
+}
+ 
+
+### delete
+POST http://localhost:7788/result/delete/202040 HTTP/1.1
+Content-Type: application/json
+ 
+### edit
+POST http://localhost:7788/result/edit/202041 HTTP/1.1
+Content-Type: application/json
+
+{
+  "result:": "《投最佳歌手1》",
+  "analysis:":"99.9%"
+}
+
+### list
+get http://localhost:7788/result HTTP/1.1
+Content-Type: application/json
+
+
+### check
+get http://localhost:7788/result/check/202041 HTTP/1.1
+Content-Type: application/json
+
+### search
+get http://localhost:7788/result/search HTTP/1.1
+Content-Type: application/json
+
+{
+  "title":"Sunt officiis harum"
+}

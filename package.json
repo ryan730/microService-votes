@@ -1,0 +1,31 @@
+{
+  "name": "seneca-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --inspect --watch src --watch libs ./src/index.js 8080"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "casual": "^1.6.2",
+    "cookie-parser": "^1.4.4",
+    "cookie-session": "^1.4.0",
+    "debug": "^4.1.1",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "json-schema-mock": "^0.0.8",
+    "json-to-schema": "^0.0.2",
+    "lodash": "^4.17.15",
+    "nodemon": "^2.0.2",
+    "request": "^2.88.2",
+    "seneca": "^3.20.1",
+    "seneca-web": "^2.2.1",
+    "seneca-web-adapter-express": "^1.2.1",
+    "winston": "^3.2.1"
+  }
+}
