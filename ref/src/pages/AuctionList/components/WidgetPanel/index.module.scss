@@ -1,0 +1,8 @@
+.panelList {
+  &>li:nth-child(n) {
+    padding: 2px 0;
+  }
+  &>li:first-child {
+    padding: 0 0 2px 0;
+  }
+}

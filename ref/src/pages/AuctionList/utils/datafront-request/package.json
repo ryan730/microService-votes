@@ -1,0 +1,69 @@
+{
+  "name": "@ali/datafront-request",
+  "version": "1.0.0",
+  "description": "datafront-request",
+  "files": [
+    "lib/",
+    "base.js",
+    "const.js",
+    "mobile.js",
+    "pc.js"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel *.js -d lib && sed -i '' 's/$/ \\/\\/eslint-disable-line/g' lib/*.js"
+  },
+  "keywords": [
+    "pm",
+    "pmc",
+    "request",
+    "datafront",
+    "kg"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.alibaba-inc.com:kg/datafront-request.git"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npm.alibaba-inc.com"
+  },
+  "author": {
+    "name": "binli.lb"
+  },
+  "maintainers": [
+    {
+      "name": "kpm_admin",
+      "email": "kpm_admin@taobao.com"
+    }
+  ],
+  "dependencies": {
+    "@ali/pmutil": "0.x.x",
+    "@ali/route-map-http": "^0.0.3",
+    "@ali/universal-pm-track": "0.x.x"
+  },
+  "_kpm": {
+    "groups": [
+      "业务(TBC)"
+    ],
+    "screenshot": ""
+  },
+  "devDependencies": {
+    "@ali/kissy-io": "^6.1.2",
+    "@ali/lib-mtop": "~2.3.1",
+    "@ali/pm-mtop": "~1.0.8",
+    "@ali/km-truthy-mtop": "^0.0.1",
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.5.1"
+  },
+  "pkgName": "@ali/datafront-request",
+  "upx": {
+    "screenshot": "",
+    "assets": {},
+    "width": [],
+    "tags": [],
+    "terminalType": "pc"
+  },
+  "__npminstall_done": "Tue Aug 20 2019 00:41:55 GMT+0800 (GMT+08:00)",
+  "_from": "@ali/datafront-request@1.0.0",
+  "_resolved": "https://registry.npm.alibaba-inc.com/@ali/datafront-request/download/@ali/datafront-request-1.0.0.tgz"
+}

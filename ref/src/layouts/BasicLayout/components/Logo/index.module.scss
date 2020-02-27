@@ -1,0 +1,17 @@
+.logoStyle {
+  display: block;
+  max-width: 180px;
+  overflow: hidden;
+  color: #fff;
+  font-size: $font-size-headline;
+  white-space: nowrap;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  
+  background: linear-gradient(to right, rgb(250, 41, 47), rgb(124, 114, 250));
+
+  &:link,
+  &:visited {
+    color: #fff;
+  }
+}
