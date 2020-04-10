@@ -49,10 +49,10 @@ const REST_Routes = [
 
 const db = { infos: mock };
 
-console.log('====>', db);
+///console.log('====>', db);
 
 function info(options) {
-    console.log('options=====:', options);
+    ///console.log('options=====:', options);
     this.add(`${$module},if:list`, (msg, done) => {
         logger.info('-------info::list--------->>>>' + JSON.stringify(msg.args.params));
         done(null, db.infos)
@@ -107,7 +107,7 @@ function info(options) {
         userCount = ++userCount;
         userCount = '20202' + userCount;
         console.log('-------create--------->>>>', userCount);
-        db.infos.push({
+        db.infos.unshift({
             id: userCount,
             ...mode,
             ...body

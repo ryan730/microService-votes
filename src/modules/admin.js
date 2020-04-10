@@ -2,6 +2,10 @@ const $module = 'module:admin';
 const logger = require('../utils/Logger');
 const mock = require('../mock/admin_mk');
 const mode = require('../mode/admin_db');
+const utils = require('../utils');
+const {
+    hiddenKeyword
+} = utils;
 
 const REST_Routes = [
     {
@@ -37,47 +41,56 @@ const REST_Routes = [
                 ...mode,
                 suffix: 'check/:id'
             },
-            // search: {
-            //     GET: true,
-            //     name: '',
-            //     ...mode,
-            //     suffix: 'search'
-            // }
+            search: {
+                POST: true,
+                name: '',
+                ...mode,
+                suffix: 'search'
+            }
         }
     }
 ]
 
 const db = { admins: mock };
 
-console.log('====>', db);
+/////console.log('====>', db);
 
 function admin(options) {
-    console.log('options=====:', options);
+    /// console.log('options=====:', options);
     this.add(`${$module},if:list`, (msg, done) => {
         logger.info('-------admin::list--------->>>>' + JSON.stringify(msg.args.params));
         done(null, db.admins)
     })
     this.add(`${$module},if:check`, (msg, done) => {
         logger.info('-------admin::check--------->>>>' + JSON.stringify(msg.args.params));
-        const { id } = msg.args.params
+        const { id } = msg.args.params;
         done(null, db.admins.find(v => Number(id) == v.id))
     })
-    // this.add(`${$module},if:search`, (msg, done) => {
-    //     const body = JSON.parse(msg.args.body);
-    //     logger.info('-------admin::search--------->>>>' + JSON.stringify(msg.args.params));
-    //     console.log('search-body:', JSON.parse(msg.args.body));
-    //     const { id } = msg.args.params
-    //     done(null, db.admins.filter(v => {
-    //         let bol = false;
-    //         for (let i in body) {
-    //             if (v[i] && v[i] == body[i]) {
-    //                 bol = true;
-    //                 break;
-    //             }
-    //         }
-    //         return bol;
-    //     }))
-    // })
+
+    this.add(`${$module},if:search`, (msg, done) => {
+        const body = msg.args.body ? JSON.parse(msg.args.body) : {};
+        logger.info('-------user::search--------->>>>' + JSON.stringify(msg.args.params));
+        console.log('search-body-query:', msg.args.body);
+        const {
+            id
+        } = msg.args.params;
+        let rq = db.admins.filter(v => {
+            let bol = false;
+            for (let i in body) {
+                if (v[i] && v[i] == body[i]) {
+                    bol = true;
+                    break;
+                }
+            }
+            return bol;
+        })
+        if (body.username && body.password && rq[0] && body.username == rq[0].username && body.password == rq[0].password) {} else {
+            rq = [];
+        }
+        console.log('search-body:', JSON.parse(msg.args.body), rq);
+        done(null, hiddenKeyword(rq, ['password']));
+    })
+
     // this.add(`${$module},if:edit`, (msg, done) => {
     //     console.log('-------edit--------->>>>', msg.args.params);
     //     logger.info('-------admin::edit--------->>>>' + JSON.stringify(msg.args.params));
@@ -108,7 +121,7 @@ function admin(options) {
         userCount = ++userCount;
         userCount = '20204' + userCount;
         console.log('-------create--------->>>>', userCount);
-        db.admins.push({
+        db.admins.unshift({
             id: userCount,
             ...mode,
             ...body

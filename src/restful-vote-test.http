@@ -9,7 +9,7 @@ Content-Type: application/json
  
 
 ### delete
-POST http://localhost:7788/vote/delete/202021 HTTP/1.1
+POST http://localhost:7788/vote/delete/2020200 HTTP/1.1
 Content-Type: application/json
  
 ### edit
@@ -31,9 +31,39 @@ get http://localhost:7788/vote/check/2020211 HTTP/1.1
 Content-Type: application/json
 
 ### search
-get http://localhost:7788/vote/search HTTP/1.1
+get http://localhost:7788/vote/search?batch=2020250 HTTP/1.1
 Content-Type: application/json
 
 {
-  "ownerid":"2020138"
+  "id":"2020206"
 }
+
+### search
+get http://localhost:8000/api/vote/search HTTP/1.1
+Content-Type: application/json
+
+{
+  "batch":"2020206,2020217,2020207"
+}
+
+### edit
+POST http://127.0.0.1:8000/api/vote/edit HTTP/1.1
+Content-Type: application/json
+
+{
+  "id":"2020204"
+}
+
+### create
+POST http://127.0.0.1:8000/api/vote/create HTTP/1.1
+Content-Type: application/json
+ 
+{
+  "title": "《投最佳歌手》",
+  "ownerid":"2020100",
+  "content":"这个投票是为了投最佳歌手/1.小王/2.小张/3.小李",
+  "votes":[]
+}
+
+### search
+GET http://127.0.0.1:8000/api/vote/search?batch=2020250

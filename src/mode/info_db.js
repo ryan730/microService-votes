@@ -3,5 +3,6 @@ module.exports = {
     "title": "",
     "content": "",
     "data": "",
-    "type": 1
+    "type": 1,
+    "pic":""
 }

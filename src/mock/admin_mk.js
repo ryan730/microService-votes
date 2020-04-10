@@ -18,8 +18,12 @@ module.exports = Array(2).fill().map((it, index) => {
     //     item['date'] = casual.date(format = 'YYYY-MM-DD') +' '+ casual.time(format = 'HH:mm:ss');
     // }
     const item = DataMocker(schema);
-    item['id'] = '20204'+index;
-    item['name'] = names[index];
+    item['id'] = '20201' + `0${index}`;
+    item['username'] = names[index];
     item['password'] = passwords[index];
+    if(index==0){
+        item['username'] = '123';
+        item['password'] = '123';
+    }
     return item;
 });

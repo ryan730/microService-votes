@@ -13,7 +13,7 @@ POST http://localhost:7788/result/delete/202040 HTTP/1.1
 Content-Type: application/json
  
 ### edit
-POST http://localhost:7788/result/edit/202041 HTTP/1.1
+POST http://localhost:7788/result/edit/2020201 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -36,4 +36,12 @@ Content-Type: application/json
 
 {
   "title":"Sunt officiis harum"
+}
+
+### update
+POST http://127.0.0.1:8000/api/analyse/edit
+Content-Type: application/json
+
+{
+  "id":"2020200"
 }

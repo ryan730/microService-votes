@@ -8,5 +8,7 @@ module.exports = {
     "status": 1,
     "resultid": 1,
     "ownerid": 1,
-    "playersid":[1]
+    "playersid":[1],
+    "type":1,
+    "desc":""
 }

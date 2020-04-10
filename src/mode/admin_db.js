@@ -1,5 +1,5 @@
 module.exports = {
     "id": 1,
-    "username": "zhuyan",
-    "password": "123456"
+    "username": "123",
+    "password": "123"
 }

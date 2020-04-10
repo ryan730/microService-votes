@@ -5,6 +5,7 @@ module.exports = {
     "playerid": [1,2],
     "num": 1,
     "result": 1,
-    "analysis": 1,
-    "date":1
+    "analysis": [],
+    "date":1,
+    "option":[]
 }
