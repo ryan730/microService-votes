@@ -1,5 +1,5 @@
 const $module = 'module:user';
-const logger = require('../utils/Logger');
+const logger = require('../utils/logger');
 const mock = require('../mock/users_mk');
 const mode = require('../mode/user_db');
 const utils = require('../utils');

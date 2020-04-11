@@ -1,5 +1,5 @@
 const $module = 'module:info';
-const logger = require('../utils/Logger');
+const logger = require('../utils/logger');
 const mock = require('../mock/infos_mk');
 const mode = require('../mode/info_db');
 

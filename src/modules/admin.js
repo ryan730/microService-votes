@@ -1,5 +1,5 @@
 const $module = 'module:admin';
-const logger = require('../utils/Logger');
+const logger = require('../utils/logger');
 const mock = require('../mock/admin_mk');
 const mode = require('../mode/admin_db');
 const utils = require('../utils');

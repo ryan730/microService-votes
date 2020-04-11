@@ -1,5 +1,5 @@
 const $module = 'module:vote';
-const logger = require('../utils/Logger');
+const logger = require('../utils/logger');
 const mock = require('../mock/votes_mk');
 const mode = require('../mode/vote_db');
 
